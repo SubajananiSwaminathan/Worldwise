@@ -1,4 +1,5 @@
 import styles from "./CountryItem.module.css";
+
 import { getFlag } from "../contexts/CitiesContext";
 
 function CountryItem({ country }) {

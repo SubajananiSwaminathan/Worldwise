@@ -3,10 +3,10 @@ import styles from "./City.module.css";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import { useCities, getFlag } from "../contexts/CitiesContext";
-
 import Spinner from "./Spinner";
 import BackButton from "./BackButton";
+
+import { useCities, getFlag } from "../contexts/CitiesContext";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -18,13 +18,14 @@ const formatDate = (date) =>
 
 function City() {
   const { id } = useParams();
+
   const { getCity, currentCity, isLoading } = useCities();
 
   useEffect(
     function () {
       getCity(id);
     },
-    [id]
+    [id, getCity]
   );
 
   const { cityName, emoji, date, notes } = currentCity;

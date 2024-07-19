@@ -27,6 +27,7 @@ const BASE_URL = "https://api.bigdatacloud.net/data/reverse-geocode-client";
 
 function Form() {
   const [lat, lng] = useURLPosition();
+
   const { createCity, isLoading } = useCities();
 
   const navigate = useNavigate();
